@@ -11,66 +11,66 @@
 
 The open-source safety visor for AI-assisted development — scanning code quality, secrets, and vulnerabilities before and after every AI edit.
 
+```bash
+go install github.com/ailinter/ailinter/cmd/ailinter@latest
+```
+
+[![Go Version](https://img.shields.io/badge/Go-1.25+-00ADD8?logo=go)](https://go.dev/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ailinter/ailinter/blob/main/LICENSE)
+[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-6e41e2)](https://modelcontextprotocol.io)
+
 ---
 
 </div>
 
-## What It Does
+## What ailinter Does
 
-ailinter sits between your AI assistant and your codebase. Before the LLM generates a line, ailinter scans the file. After the LLM makes changes, ailinter checks again.
+Your AI coding assistant goes into every file blind. ailinter gives it a pre-flight checklist — scanning for complexity traps, hardcoded secrets, and vulnerability patterns before and after every AI edit.
 
-**Five pillars of protection:**
+**One tool. Five shields:**
 
-| Pillar | Tool | What It Catches |
-|--------|------|----------------|
-| Code Quality Radar | `analyze_code` | 17 structural detectors — nesting, complexity, bloat, duplication |
-| Secret Scanning | `scan_for_secrets` | 269 rules — AWS keys, API tokens, private keys, JWT |
-| Vulnerability Detection | `scan_for_secrets` | 25 deterministic patterns — OWASP Top 10 |
-| Refactoring Guide | `get_refactoring_strategy` | 8 step-by-step patterns — guard clauses, extract method, SRP |
-| Hotspot Analysis | `list_hotspots` | Frequently-changed files with low quality scores |
+| | | |
+|---|---|---|
+| **Code Quality** | 17 detectors, 0–100 score | Catches brain methods, deep nesting, god classes |
+| **Secret Detection** | 269 rules, 100+ providers | 203% more secrets found than gitleaks alone |
+| **Vulnerability** | 25 OWASP patterns | Deserialization, injection, XSS, weak crypto |
+| **Refactoring** | 8 step-by-step patterns | Exact instructions AI can follow to fix issues |
+| **Hotspots** | Churn × complexity | Find the files most likely to break next |
 
-## Quick Preview
+### The Traffic-Light System
 
-```bash
-# Install
-go install github.com/ailinter/ailinter/cmd/ailinter@latest
+Every file gets a score that tells AI when to back off:
 
-# Scan a file — quality score + secrets + vulnerabilities
-ailinter check src/main.go
+| 95–100 Go Ahead | 75–94 Proceed with Care | 0–74 Stop & Refactor |
+|:---:|:---:|:---:|
+| Safe to modify | Small changes only | Refactor first |
 
-# Initialize a project
-ailinter init
-
-# Run as an MCP server for your AI assistant
-ailinter mcp
-```
-
-### Quality Score
-
-Every file gets a **0–100 score** that tells AI assistants whether it's safe to modify:
-
-| Score | Label | What It Means |
-|-------|-------|---------------|
-| 95–100 | **Go Ahead** | Safe for AI modification |
-| 75–94 | **Proceed with Care** | Use small changes, re-check after each edit |
-| 0–74 | **Stop & Refactor** | Refactor BEFORE AI touches this file |
+---
 
 ## Works With
 
-Cursor · Claude Code · GitHub Copilot · OpenCode · Codex · Gemini CLI · Windsurf · Continue.dev
+<p>
+  <img src="https://img.shields.io/badge/Cursor-000?logo=cursor&logoColor=white" alt="Cursor">
+  <img src="https://img.shields.io/badge/Claude%20Code-D97757?logo=anthropic&logoColor=white" alt="Claude Code">
+  <img src="https://img.shields.io/badge/GitHub%20Copilot-181717?logo=github&logoColor=white" alt="Copilot">
+  <img src="https://img.shields.io/badge/OpenCode-1a1a2e?logo=terminal&logoColor=white" alt="OpenCode">
+</p>
 
-MCP-compatible. Single Go binary. Zero dependencies.
+MCP-compatible. Single binary. Zero dependencies. Under 15MB.
 
 ---
 
 ## Get Started
 
+- **Install**: `go install github.com/ailinter/ailinter/cmd/ailinter@latest`
+- **Quick Start**: `ailinter check src/main.go`
 - **Source**: [github.com/ailinter/ailinter](https://github.com/ailinter/ailinter)
 - **Website**: [ailinter.dev](https://ailinter.dev)
-- **Docs**: See the [README](https://github.com/ailinter/ailinter#readme)
 
 ---
 
 <p align="center">
   Created by <a href="https://github.com/IvanBern">Ivan Bernikov</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/ivanbernikov/">LinkedIn</a>
 </p>
