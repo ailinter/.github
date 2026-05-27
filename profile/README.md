@@ -1,9 +1,6 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile/logo-icon-dark.svg">
-  <img alt="ailinter" src="./profile/logo-icon-dark.svg" width="120">
-</picture>
+<img alt="ailinter" src="./profile/wordmark.png" width="400">
 
 # ailinter
 
