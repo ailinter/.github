@@ -1,6 +1,6 @@
 <div align="center">
 
-<img alt="ailinter" src="./profile/wordmark.png" width="400">
+<img alt="ailinter" src="./wordmark.png" width="400">
 
 # ailinter
 
